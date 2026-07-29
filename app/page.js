@@ -102,9 +102,7 @@ export default function Home() {
           Forgot password?</Link></p>
       
         </form>
-       <Link href='/create'>
-      Create Admin
-      </Link>
+      
         </div>
         
         
