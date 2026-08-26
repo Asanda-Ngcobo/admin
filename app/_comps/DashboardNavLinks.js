@@ -1,6 +1,6 @@
 'use client';
 
-import { BarChart, FileText, Grid, PlusCircle, Users } from "@deemlol/next-icons";
+import { BarChart, FileText, Grid, PlusCircle, ShieldOff, Users } from "@deemlol/next-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Profile from "./Profile";
@@ -24,11 +24,24 @@ const navLinks = [
     exact: false,
     icon: FileText,
   },
+
+     {
+    name: 'Surveys',
+    href: '/dashboard/surveys',
+    exact: false,
+    icon: FileText,
+  },
   {
     name: 'Blog Post',
     href: '/dashboard/blog-post',
     exact: false,
     icon: PlusCircle,
+  },
+      {
+    name: 'Reset Password',
+    href: '/dashboard/reset-password',
+    exact: false,
+    icon: ShieldOff,
   },
 
 ]
@@ -38,7 +51,7 @@ function DashNavLinks({ data }) {
 
   return (
     <main className="">
-      <nav className="h-27.5 text-white w-full z-50 flex items-center justify-center mt-10 font-(--font-sans)">
+      <nav className="h-[60-vh] text-white w-full z-50 flex items-center justify-center mt-10 font-(--font-sans)">
         <ul className="grid grid-cols-4 gap-2 text-center w-full lg:grid-cols-1 lg:grid-rows-4 lg:gap-10 mt-60">
           {navLinks.map((link) => {
             const isActive = link.exact

@@ -11,7 +11,7 @@ import Loading from "../loading";
 async function page() {
      const { data: { users } } = await supabaseAdmin.auth.admin.listUsers({
       page: 1,
-      perPage: 100
+      perPage: 1000
     })
   const lists = await getLists();
 

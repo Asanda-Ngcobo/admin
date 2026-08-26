@@ -90,7 +90,7 @@ export default function Home() {
           />
 
           <button className="w-[80%] mx-[10%] px-4 py-3
-           rounded-sm bg-(--accent-primary)
+           rounded-sm bg-(--accent-primary) text-white
           "
         disabled={isPending}>
           {isPending ? 'Signing in...': 'Sign In'} 

@@ -32,3 +32,21 @@ export async function  getUser(){
   return user
 
 }
+
+export async function getSurveys() {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user || user.app_metadata?.role !== 'admin') {
+    throw new Error('Unauthorized')
+  }
+
+  const { data: lists, error } = await supabase
+    .from('onboarding_surveys')
+    .select('*')
+    .order('created_at', { ascending: false })
+
+  if (error) throw new Error('Could not fetch surveys')
+
+  return lists
+}
