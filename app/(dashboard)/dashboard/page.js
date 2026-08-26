@@ -13,7 +13,7 @@ async function page() {
 
   const { data: { users } } = await supabaseAdmin.auth.admin.listUsers({
   page: 1,
-  perPage: 100
+  perPage: 10000
 })
 const lists = await getLists()
 
