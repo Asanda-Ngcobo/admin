@@ -54,8 +54,8 @@ export async function inviteAdmin(email) {
     throw new Error('Unauthorized')
   }
 
-  // const password = generatePassword()
-  const password = 'TestPassword123'
+   const password = generatePassword()
+
 
   const { data, error } = await supabaseAdmin.auth.admin.createUser({
     email,
