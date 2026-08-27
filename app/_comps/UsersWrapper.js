@@ -108,7 +108,7 @@ const formatCurrency = (value) =>
         </li>
 
         {/* REVENUE */}
-        <li className="w-1/4 bg-white h-60 rounded-lg flex flex-col justify-center items-center gap-4">
+        {/*<li className="w-1/4 bg-white h-60 rounded-lg flex flex-col justify-center items-center gap-4">
           <div className="flex gap-4 items-center">
             <DollarSign />
             <h1>User Spend</h1>
@@ -118,7 +118,7 @@ const formatCurrency = (value) =>
           </h1>
         </li>
 
-        {/* AVERAGE */}
+     
         <li className="w-1/4 bg-white h-60 rounded-lg flex flex-col justify-center items-center gap-4">
           <div className="flex gap-4 items-center">
             <FileText />
@@ -127,7 +127,7 @@ const formatCurrency = (value) =>
           <h1 className="text-4xl">
             {listPerUser}
           </h1>
-        </li>
+        </li>*/}
       </ul>
       <div className="bg-white h-[55vh] w-full rounded-sm overflow-hidden mt-3">
 <div className="h-full overflow-y-auto">
