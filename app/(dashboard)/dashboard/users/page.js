@@ -1,7 +1,7 @@
 
 
 import UsersWrapper from "@/app/_comps/UsersWrapper";
-import { getLists, getSummaries } from "@/app/lib/data/data-services";
+import { getListItems, getLists, getSummaries } from "@/app/lib/data/data-services";
 import { supabaseAdmin } from "@/app/lib/supabase/admin"
 import { Suspense } from "react";
 import Loading from "../loading";
@@ -14,6 +14,13 @@ async function page() {
       perPage: 1000
     })
   const lists = await getLists();
+  // const listItems = await getListItems()
+  const { data: itemsData, error: itemsError } = await supabaseAdmin
+        .from("list_items")
+        .select("*")
+    
+        if (itemsError) console.error(itemsError);
+  // console.log(listItems.length)
 
     const nonAdminUsers = users.filter(u => u.app_metadata?.role !== 'admin')
     // console.log(nonAdminUsers)
@@ -23,7 +30,8 @@ async function page() {
           <Suspense fallback={<Loading/>}>
               <UsersWrapper
              users={nonAdminUsers}
-         lists={lists}/>
+         lists={lists}
+         listItems={itemsData}/>
          
 
           </Suspense>

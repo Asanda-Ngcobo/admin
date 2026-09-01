@@ -51,7 +51,7 @@ function DashNavLinks({ data }) {
 
   return (
     <main className="">
-      <nav className="h-[60-vh] text-white w-full z-50 flex items-center justify-center mt-10 font-(--font-sans)">
+      <nav className="h-[60vh] text-white w-full z-50 flex items-center justify-center mt-10 font-(--font-sans)">
         <ul className="grid grid-cols-4 gap-2 text-center w-full lg:grid-cols-1 lg:grid-rows-4 lg:gap-10 mt-60">
           {navLinks.map((link) => {
             const isActive = link.exact

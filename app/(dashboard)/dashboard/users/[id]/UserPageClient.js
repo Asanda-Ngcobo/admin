@@ -5,10 +5,13 @@ import { useEffect, useState } from 'react';
 import Loading from '../../loading';
 import { DollarSign, FileText, UserPlus } from '@deemlol/next-icons';
 
-function UserPageClient({ profile, userLists }) {
+function UserPageClient({ profile, userLists, listItems }) {
   const [user, setUser] = useState(null);
   const [lists, setLists] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const listItemsNumber = listItems.length
+  console.log(listItemsNumber)
 
   useEffect(() => {
     if (!profile?.id) {
@@ -134,6 +137,7 @@ function UserPageClient({ profile, userLists }) {
                     <thead className="sticky top-0 bg-(--accent-primary) z-10">
                       <tr className="border-b border-white/10 text-left">
                         <th className="p-4 font-medium">List Name</th>
+                         <th className="p-4 font-medium">List Items #</th>
                     
                         <th className="p-4 font-medium">Spent</th>
                       

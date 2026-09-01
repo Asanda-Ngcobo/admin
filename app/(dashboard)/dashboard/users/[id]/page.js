@@ -32,11 +32,20 @@ async function userPage({params}) {
         .eq("user_id", id)
          .order("created_at", { ascending: false });
 
+         //Fetch items
+
+           const { data: itemsData, error: itemsError } = await supabaseAdmin
+        .from("list_items")
+        .select("*")
+        .eq("list_id", listid);
+        if (itemsError) console.error(itemsError);
+
     return (
         <div className="mt-10  w-full">
              <Suspense fallback={<Loading/>}>
              <UserPageClient profile={profile}
-             userLists={userLists}/>
+             userLists={userLists}
+             listItems={itemsData}/>
          
 
           </Suspense>
