@@ -332,12 +332,12 @@ function UsersWrapper({ users, lists, listItems }) {
 
                 return (
                   <tr
-                    key={user.id}
+                    key={displayedUsers.id}
                     className="border-b cursor-pointer border-b-background hover:bg-gray-50 transition"
                   >
                     {/* IMAGE */}
                     <td className="px-2 m-4 flex justify-center items-center h-10 w-10 rounded-full bg-[#1EC677]">
-                      <Link href={`/dashboard/users/${user.id}`}>
+                      <Link href={`/dashboard/users/${displayedUsers.id}`}>
                         <User />
                       </Link>
                     </td>
